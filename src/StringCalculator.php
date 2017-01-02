@@ -12,22 +12,13 @@ class StringCalculator
             return 0;
         }
 
-        if (self::hasAtLeastOneSeparator($string)) {
-            $operators = explode(self::SEPARATOR, $string);
-            $sum = 0;
+        $result = 0;
+        $operators = explode(self::SEPARATOR, $string);
 
-            foreach ($operators as $operator) {
-                $sum += (int)$operator;
-            }
-
-            return $sum;
+        foreach ($operators as $operator) {
+            $result += (int)$operator;
         }
 
-        return (int)$string;
-    }
-
-    private static function hasAtLeastOneSeparator(string $string):bool
-    {
-        return false !== strpos($string, self::SEPARATOR);
+        return $result;
     }
 }
