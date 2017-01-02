@@ -6,9 +6,7 @@ class StringCalculator
 {
     public static function Add(string $string): int
     {
-        if ('10' === $string) {
-            return (int)$string;
-        } elseif ('11' === $string) {
+        if (false === empty($string)) {
             return (int)$string;
         }
 
