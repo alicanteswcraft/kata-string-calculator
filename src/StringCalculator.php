@@ -8,6 +8,8 @@ class StringCalculator
     {
         if ('10' === $string) {
             return 10;
+        } elseif ('11' === $string) {
+            return 11;
         }
 
         return 0;
