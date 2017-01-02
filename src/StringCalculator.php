@@ -11,8 +11,8 @@ class StringCalculator
         }
 
         if ('1,3' === $string) {
-            $operator1 = 1;
-            $operator2 = 3;
+            $operator1 = (int)$string[0];
+            $operator2 = (int)$string[2];
 
             return $operator1 + $operator2;
         }
