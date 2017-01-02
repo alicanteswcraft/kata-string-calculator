@@ -26,5 +26,7 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
     public function test_add_with_multiple_numbers_should_return_the_sum()
     {
         $this->assertEquals(8, StringCalculator::Add('3,1,4'));
+
+        $this->assertEquals(8, StringCalculator::Add("3\n1,4"));
     }
 }

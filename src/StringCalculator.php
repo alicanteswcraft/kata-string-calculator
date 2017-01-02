@@ -4,7 +4,7 @@ namespace KataStringCalculator;
 
 class StringCalculator
 {
-    const SEPARATOR = ',';
+    const SEPARATOR = [',', "\n"];
 
     public static function Add(string $string): int
     {
@@ -13,7 +13,9 @@ class StringCalculator
         }
 
         $result = 0;
-        $operators = explode(self::SEPARATOR, $string);
+
+        $pattern = sprintf('/(%s)/i', implode('|', self::SEPARATOR));
+        $operators = preg_split($pattern, $string);
 
         foreach ($operators as $operator) {
             $result += (int)$operator;
