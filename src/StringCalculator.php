@@ -14,10 +14,13 @@ class StringCalculator
 
         if (self::hasAtLeastOneSeparator($string)) {
             $operators = explode(self::SEPARATOR, $string);
-            $operator1 = (int)$operators[0];
-            $operator2 = (int)$operators[1];
+            $sum = 0;
 
-            return $operator1 + $operator2;
+            foreach ($operators as $operator) {
+                $sum += (int)$operator;
+            }
+
+            return $sum;
         }
 
         return (int)$string;
