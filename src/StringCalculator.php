@@ -13,8 +13,9 @@ class StringCalculator
         }
 
         if (self::hasAtLeastOneSeparator($string)) {
-            $operator1 = (int)$string[0];
-            $operator2 = (int)$string[2];
+            $operators = explode(self::SEPARATOR, $string);
+            $operator1 = (int)$operators[0];
+            $operator2 = (int)$operators[1];
 
             return $operator1 + $operator2;
         }
