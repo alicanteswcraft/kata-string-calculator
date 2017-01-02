@@ -13,13 +13,19 @@ class StringCalculator
         }
 
         $result = 0;
-
-        $pattern = sprintf('/(%s)/i', implode('|', self::SEPARATOR));
-        $operators = preg_split($pattern, $string);
+        $operators = self::extractOperatorsFrom($string);
 
         foreach ($operators as $operator) {
             $result += (int)$operator;
         }
+
+        return $result;
+    }
+
+    private static function extractOperatorsFrom(string $string):array
+    {
+        $pattern = sprintf('/(%s)/i', implode('|', self::SEPARATOR));
+        $result = preg_split($pattern, $string);
 
         return $result;
     }
