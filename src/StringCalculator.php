@@ -13,7 +13,16 @@ class StringCalculator
         }
 
         if ('//' === substr($input, 0, 2)) {
-            return 4;
+            $numbers = substr($input, 3);
+            $operators = self::extractOperatorsWithCustomDelimiterFrom($numbers);
+
+            $result = 0;
+
+            foreach ($operators as $operator) {
+                $result += (int)$operator;
+            }
+
+            return $result;
         }
 
         $result = 0;
@@ -22,6 +31,14 @@ class StringCalculator
         foreach ($operators as $operator) {
             $result += (int)$operator;
         }
+
+        return $result;
+    }
+
+    private static function extractOperatorsWithCustomDelimiterFrom(string $string):array
+    {
+        $pattern = sprintf('/(%s)/i', implode('|', [';']));
+        $result = preg_split($pattern, $string);
 
         return $result;
     }

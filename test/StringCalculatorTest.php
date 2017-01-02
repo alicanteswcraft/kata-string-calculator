@@ -33,5 +33,7 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
     public function test_should_recognize_custom_delimiters()
     {
         $this->assertEquals(4, StringCalculator::Add('//;3;1'));
+
+        $this->assertEquals(8, StringCalculator::Add('//;3;1;4'));
     }
 }
