@@ -15,4 +15,9 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals(11, StringCalculator::Add('11'));
     }
+
+    public function test_add_with_two_numbers_should_return_the_sum()
+    {
+        $this->assertEquals(4, StringCalculator::Add('1,3'));
+    }
 }
