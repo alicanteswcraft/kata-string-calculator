@@ -16,23 +16,12 @@ class StringCalculator
             $numbers = substr($input, 3);
             $operators = self::extractOperatorsWithCustomDelimiterFrom($numbers);
 
-            $result = 0;
-
-            foreach ($operators as $operator) {
-                $result += (int)$operator;
-            }
-
-            return $result;
+            return self::sum($operators);
         }
 
-        $result = 0;
         $operators = self::extractOperatorsFrom($input);
 
-        foreach ($operators as $operator) {
-            $result += (int)$operator;
-        }
-
-        return $result;
+        return self::sum($operators);
     }
 
     private static function extractOperatorsWithCustomDelimiterFrom(string $string):array
@@ -47,6 +36,21 @@ class StringCalculator
     {
         $pattern = sprintf('/(%s)/i', implode('|', self::DEFAULT_DELIMITERS));
         $result = preg_split($pattern, $string);
+
+        return $result;
+    }
+
+    /**
+     * @param $operators
+     * @return int
+     */
+    private static function sum($operators):int
+    {
+        $result = 0;
+
+        foreach ($operators as $operator) {
+            $result += (int)$operator;
+        }
 
         return $result;
     }
