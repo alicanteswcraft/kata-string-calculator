@@ -12,14 +12,12 @@ class StringCalculator
             return 0;
         }
 
+        $operators = self::extractOperatorsFrom($input);
+
         if ('//' === substr($input, 0, 2)) {
             $numbers = substr($input, 3);
             $operators = self::extractOperatorsWithCustomDelimiterFrom($numbers);
-
-            return self::sum($operators);
         }
-
-        $operators = self::extractOperatorsFrom($input);
 
         return self::sum($operators);
     }
