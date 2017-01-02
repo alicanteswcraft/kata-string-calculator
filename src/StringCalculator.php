@@ -10,7 +10,7 @@ class StringCalculator
             return 0;
         }
 
-        if ('1,3' === $string) {
+        if (false !== strpos($string, ',')) {
             $operator1 = (int)$string[0];
             $operator2 = (int)$string[2];
 
