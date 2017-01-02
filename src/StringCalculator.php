@@ -6,10 +6,10 @@ class StringCalculator
 {
     public static function Add(string $string): int
     {
-        if (false === empty($string)) {
-            return (int)$string;
+        if (true === empty($string)) {
+            return 0;
         }
 
-        return 0;
+        return (int)$string;
     }
 }

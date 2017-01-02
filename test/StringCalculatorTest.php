@@ -13,8 +13,6 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
 
     public function test_add_with_a_number_should_return_the_same_number()
     {
-        $this->assertEquals(10, StringCalculator::Add('10'));
-
         $this->assertEquals(11, StringCalculator::Add('11'));
     }
 }
