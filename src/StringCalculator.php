@@ -11,7 +11,10 @@ class StringCalculator
         }
 
         if ('1,3' === $string) {
-            return 1 + 3;
+            $operator1 = 1;
+            $operator2 = 3;
+
+            return $operator1 + $operator2;
         }
 
         return (int)$string;
