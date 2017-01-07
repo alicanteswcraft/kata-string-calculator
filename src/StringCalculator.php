@@ -14,25 +14,17 @@ class StringCalculator
 
         $operators = self::extractOperatorsFrom($input);
 
-        if ('//' === substr($input, 0, 2)) {
-            $numbers = substr($input, 3);
-            $operators = self::extractOperatorsWithCustomDelimiterFrom($numbers);
-        }
-
         return self::sum($operators);
     }
 
-    private static function extractOperatorsWithCustomDelimiterFrom(string $string):array
+    /**
+     * @param string $string
+     * @return array
+     */
+    private static function extractOperatorsFrom(string $string): array
     {
-        $pattern = sprintf('/(%s)/i', implode('|', [';']));
-        $result = preg_split($pattern, $string);
-
-        return $result;
-    }
-
-    private static function extractOperatorsFrom(string $string):array
-    {
-        $pattern = sprintf('/(%s)/i', implode('|', self::DEFAULT_DELIMITERS));
+        $delimiters = self::extractDelimitersFrom($string);
+        $pattern = sprintf('/(%s)/i', implode('|', $delimiters));
         $result = preg_split($pattern, $string);
 
         return $result;
@@ -42,7 +34,7 @@ class StringCalculator
      * @param $operators
      * @return int
      */
-    private static function sum($operators):int
+    private static function sum($operators): int
     {
         $result = 0;
 
@@ -51,5 +43,20 @@ class StringCalculator
         }
 
         return $result;
+    }
+
+    /**
+     * @param string $string
+     * @return array
+     */
+    private static function extractDelimitersFrom(string $string)
+    {
+        if ('//' !== substr($string, 0, 2)) {
+            return self::DEFAULT_DELIMITERS;
+        }
+
+        $delimiter = substr($string, 2, 1);
+
+        return [$delimiter];
     }
 }
