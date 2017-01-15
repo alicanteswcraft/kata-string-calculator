@@ -37,4 +37,5 @@ The following is a TDD Kata- an exercise in coding, refactoring and test-first, 
 Do you want to share your solution? Please, read [CONTRIBUTING.md](https://github.com/alicanteswcraft/kata-string-calculator/blob/master/CONTRIBUTING.md) and append your solution just bellow.
 
 * Ruben Antón @rubocoptero Branch: ebarbeito-rubocoptero-php
-* Enrique Barbeito @ebarbeito Branch: ebarbeito-rubocoptero-php
+* Enrique Barbeito @ebarbeito Branch: ebarbeito-rubocoptero-php, ebarbeito-php
+
