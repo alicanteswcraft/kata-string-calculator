@@ -1,0 +1,30 @@
+{
+    "name": "ebarbeito/kata-string-calculator",
+    "description": "Create a simple String calculator with a method int Add(string numbers)",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Enrique Barbeito García",
+            "email": "ebarbeito@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "5.4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "KataStringCalculator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KataStringCalculator\\Test\\": "test/"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit --colors=always",
+        "watch": "watch -n1 -d ./vendor/bin/phpunit"
+    }
+}
+
