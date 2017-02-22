@@ -38,4 +38,3 @@ Do you want to share your solution? Please, read [CONTRIBUTING.md](https://githu
 
 * Ruben Antón @rubocoptero Branch: ebarbeito-rubocoptero-php
 * Enrique Barbeito @ebarbeito Branch: ebarbeito-rubocoptero-php
-* Nacho Salvador @nachosalvador Branch: nachosalvador-php
